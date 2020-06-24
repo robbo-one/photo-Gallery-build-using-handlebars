@@ -16,7 +16,7 @@
     "express-handlebars": "^4.0.0"
   },
   "devDependencies": {
-    "jest": "^25.1.0",
+    "jest": "^26.1.0",
     "nodemon": "^2.0.2",
     "supertest": "^4.0.2"
   }
