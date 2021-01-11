@@ -13,5 +13,6 @@ server.use(express.static('public'))
 
 // Routes
 server.get('/', (req,res) => {
-  res.send(`<h1> Hi </h1>`)
+  // res.send(`<h1> Hi </h1>`)
+  res.render('home')
 })
