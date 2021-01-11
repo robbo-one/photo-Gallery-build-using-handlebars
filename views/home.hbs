@@ -1,4 +1,4 @@
-<h1>{{title}}</h1>
+{{> header}}
 {{#each art}}
-<li>{{title}}, <a href={{artist.url}}>{{artist.name}}</a></li>
+{{> artwork-summary}}
 {{/each}}
