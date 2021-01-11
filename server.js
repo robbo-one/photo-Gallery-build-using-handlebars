@@ -13,7 +13,16 @@ server.use(express.static('public'))
 
 // Routes
 server.get ('/', (req, res) => {
-  const greeting = res.render('home.hbs')
+
+  const viewData = {
+    title: 'Gallery',
+    author: 'temp'
+  
+  }
+
+  const template = 'home'
+  res.render(template, viewData)
+ 
 })
 
 
