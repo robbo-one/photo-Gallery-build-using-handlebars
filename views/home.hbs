@@ -3,5 +3,9 @@
 <ul>
   {{#each art}}
   <li>{{title}}</li>
+  <li>
+    <a href={{artist.url}}>
+    <em>{{artist.name}}</em></a>
+  </li>
   {{/each}}
 </ul>
