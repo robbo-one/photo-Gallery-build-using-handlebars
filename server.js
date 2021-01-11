@@ -21,3 +21,10 @@ server.get('/', (req,res) => {
   }
   res.render('home', viewData)
 })
+
+server.get('/artwork/:id', (req, res) => {
+  const id = req.params.id
+  const artwork = art.find(art => art.id == id)
+  
+  res.render('artworks', artwork)
+})
