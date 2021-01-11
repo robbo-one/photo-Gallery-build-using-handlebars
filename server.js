@@ -1,5 +1,6 @@
 const express = require('express')
 const hbs = require('express-handlebars')
+const art = require('./art.json')
 
 const server = express()
 module.exports = server
@@ -12,3 +13,11 @@ server.set('view engine', 'hbs')
 server.use(express.static('public'))
 
 // Routes
+const viewData = {
+  title: 'Gallery',
+  art: art
+}
+
+server.get('/', (req, res) => {
+  res.render('home', viewData)
+})
