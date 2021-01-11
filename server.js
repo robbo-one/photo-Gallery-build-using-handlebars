@@ -24,8 +24,10 @@ server.get('/gallery', (req, res) => {
     title: 'Gallery',
     art: art
   }
-  const template = 'home'
-  res.render(template, viewData)
+  const template =  'home'
+    // artwork: 'artwork'
+  
+  res.render(template, viewData, )
 })
 
 
