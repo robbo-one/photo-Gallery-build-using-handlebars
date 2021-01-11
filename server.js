@@ -13,5 +13,10 @@ server.use(express.static('public'))
 
 // Routes
 server.get('/home', (req, res) => {
-  res.render('home')
+  const viewData = {
+    title: 'Gallery'
+  }
+  const template = 'home'
+  res.render(template, viewData)
+
 })
