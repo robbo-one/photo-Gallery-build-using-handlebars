@@ -1,8 +1,9 @@
 const express = require('express')
 const hbs = require('express-handlebars')
+const art = require('./art.json')
 
 const server = express()
-module.exports = server
+
 
 // Middleware
 server.engine('hbs', hbs({
@@ -15,7 +16,8 @@ server.use(express.static('public'))
 server.get('/', (req, res) => {
   
   const viewData = {
-    title: 'Gallery'
+    title: 'Gallery',
+    art: art,
     }
 
   const template = 'home'
@@ -24,3 +26,5 @@ server.get('/', (req, res) => {
   res.render('home.hbs')
   
 })
+
+module.exports = server
