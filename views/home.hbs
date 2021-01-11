@@ -1,8 +1,6 @@
-<h1>{{title}}</h1>
-
+  {{>header}}
 <ul>
   {{#each art}}
-  <li>{{title}}</li>
-  <a href={{artist.url}}>{{artist.name}}</a>
+  {{>artwork-summary}}
   {{/each}}
 </ul>

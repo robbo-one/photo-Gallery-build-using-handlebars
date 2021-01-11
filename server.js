@@ -17,7 +17,8 @@ server.use(express.static('public'))
 
 const viewData = {
   title: 'Gallery',
-  art: art
+  art: art,
+  footer: 'footer'
 }
 
 server.get('/', function(req, res) {
