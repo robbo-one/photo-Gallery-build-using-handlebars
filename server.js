@@ -12,3 +12,13 @@ server.set('view engine', 'hbs')
 server.use(express.static('public'))
 
 // Routes
+server.get ('/', (req, res) => {
+  const greeting = res.render('home.hbs')
+})
+
+
+ 
+  
+
+
+
