@@ -1,3 +1,4 @@
+//1=Create a home route in server
 const server = require('./server')
 
 const port = 3000
