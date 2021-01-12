@@ -14,3 +14,14 @@ test ("/ exists", done => {
         done()
     })
 })
+
+test ("there are more than three artworks", done => {
+    request(server)
+    .get("/")
+    .end((err, res) =>{
+        const $ = cheerio.load(res.text)
+        const actual = $('li').length
+        expect(actual).toBeGreaterThan(3)
+        done()
+    })
+})
