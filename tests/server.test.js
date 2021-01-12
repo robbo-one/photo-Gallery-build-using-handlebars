@@ -25,3 +25,16 @@ test ("there are more than three artworks", done => {
         done()
     })
 })
+
+test ("there is a link for each artwork", done => {
+    request(server)
+    .get("/")
+    .end((err, res) => {
+        const $ = cheerio.load(res.text)
+        const expected = $("li").length
+        const actual = $("a").length
+        expect(actual).toEqual(expected)
+
+        done()
+    })
+})
