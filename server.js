@@ -30,5 +30,23 @@ server.get('/gallery', (req, res) => {
   res.render(template, viewData, )
 })
 
+server.get('/artworks/:id', (req, res) => {
+  const artworkId = req.params.id
+
+  const viewData = art.find(thething => thething.id == artworkId)
+  console.log(viewData)
+
+  // art.find() => {
+  // }
+  // const viewData = {
+  //   art: art,
+  // }
+  const template = 'artworks' 
+  res.send(viewData)
+  // res.render (template)  
+  
+    
+})
+
 
 
