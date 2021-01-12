@@ -1,6 +1,8 @@
 const express = require('express')
 const hbs = require('express-handlebars')
 
+const routes = require('./routes')
+
 const server = express()
 module.exports = server
 
@@ -25,6 +27,9 @@ const viewData = {
 server.get('/', function(req, res) {
   res.render('home', viewData)
 })
+
+
+
 
 server.get('/artworks/:id', function(req, res) {
   
