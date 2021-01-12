@@ -15,3 +15,15 @@ test("check route for '/' exists", done => {
       done()
     })
 })
+
+test("Check for comments array in list", done => {
+  request(server)
+    .get('/artwork/2')
+    .end((err,res) => {
+      const $ = cheerio.load(res.text)
+      const expected = 2
+      const actual = $('ul').length
+      expect(expected).toBe(actual)
+    done()
+  })
+})
