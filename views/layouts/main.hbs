@@ -9,7 +9,12 @@
 </head>
 
 <body>
-    {{> header}}
+    {{#if title}}
+        {{> header}}
+    {{/if}}
+    {{#unless title}}
+        <h1>Dear developer, you screwed up, put a title in!</h1>
+    {{/unless}}
     {{{body}}}
     {{> footer}}
 </body>
