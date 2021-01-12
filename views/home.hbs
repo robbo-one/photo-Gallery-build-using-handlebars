@@ -1,5 +1,12 @@
 <ul>
+  {{#if art}}
+
   {{#each art}}
   {{>artwork-summary}}
   {{/each}}
+  {{/if}}
+  {{#unless art}}
+  <h2>Sorry, no art today. Or fruit. Again, very sorry.</h2>
+  {{/unless}}
+
 </ul>
