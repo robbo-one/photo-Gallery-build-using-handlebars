@@ -1,0 +1,8 @@
+<p>Artist: {{artwork.artist.name}}</p>
+<p>Licence: {{artwork.license.name}}</p>
+<h5>Comments:</h5>
+<ul>
+{{#each artwork.comments}}
+    <li>{{this}}</li>
+{{/each}}
+</ul>

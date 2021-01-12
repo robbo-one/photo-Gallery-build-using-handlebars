@@ -13,7 +13,7 @@ server.set('view engine', 'hbs')
 server.use(express.static('public'))
 
 // Routes
-server.get('/home', (req, res) => {
+server.get('/', (req, res) => {
   const viewData = {
     title: 'Gallery',
     art: art
@@ -26,7 +26,7 @@ server.get('/home', (req, res) => {
 server.get('/artworks/:id', (req, res) => {
   const viewData = {
     title: art.find(element => element.id == req.params.id).title,
-    artwork : art.find(element => element.id == req.params.id)
+    artwork : art.find(element => element.id == req.params.id),
   }
   res.render('artworks', viewData)
 })
