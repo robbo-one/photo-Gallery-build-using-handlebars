@@ -1,2 +1,5 @@
-{{> homepage}}
-<img src={{artwork}}>
+{{> homepage}}<br>
+<img src={{artwork}}><br>
+{{#each art}}
+{{> displaydetails}}
+{{/each}}

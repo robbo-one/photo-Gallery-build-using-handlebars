@@ -24,7 +24,8 @@ server.get('/', (req, res) => {
 
 server.get('/artworks/:id', (req, res) => {
   let viewData = {
-    artwork: ""
+    artwork: "",
+    art: art
   }
   // viewData.artwork = art.find(pic => pic.id == req.params.id).artwork
   if (viewData.artwork = art.find(pic => pic.id == req.params.id).artwork) {
