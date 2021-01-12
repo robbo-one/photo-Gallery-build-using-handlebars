@@ -1,7 +1,6 @@
 const express = require('express')
 const hbs = require('express-handlebars')
 const art = require('./art.json')
-
 const server = express()
 module.exports = server
 
@@ -20,18 +19,16 @@ server.get('/', (req, res)  => {
 })
 
 server.get('/gallery', (req, res) => {
+  const title = "Hello, here are some pictures"
+  const bottomText = "I like garlic bread"
   const viewData = {
-    title: 'Gallery',
-    art: art
+    title: title,
+    art: art,
+    bottomText: bottomText,
   }
   const template =  'home'
-    // artwork: 'artwork'
-  
   res.render(template, viewData, )
 })
 
 
 
-// server.get('/art', (req, res) => {
-
-// })
