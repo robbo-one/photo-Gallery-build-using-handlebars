@@ -16,14 +16,28 @@ test("check route for '/' exists", done => {
     })
 })
 
-test("Check for comments array in list", done => {
+test('Check for comments array in list', done => {
   request(server)
     .get('/artwork/2')
-    .end((err,res) => {
+    .end((err, res) => {
+      expect(err).toBeNull()
       const $ = cheerio.load(res.text)
       const expected = 2
       const actual = $('ul').length
       expect(expected).toBe(actual)
-    done()
-  })
+      done()
+    })
 })
+
+test('Check artwork contains img', done => {
+  request(server)
+    .get('/artwork/1')
+    .end((err, res) => {
+      expect(err).toBeNull()
+      const $ = cheerio.load(res.text)
+      const actual = $('img').attr('src')
+      console.log(actual)
+      expect(actual).toBeTruthy()
+      done()
+    })
+}) 
