@@ -27,4 +27,15 @@ server.get('/', (req, res) => {
   
 })
 
+server.get('/artworks/:id', (req, res) => {
+ 
+  const artid = art.find(element => {
+    return element.id == req.params.id
+  })
+  
+console.log(artid)
+  const template = 'artworks'
+  res.render(template, artid)
+})
+
 module.exports = server
