@@ -33,3 +33,7 @@ server.get('/artworks/:id', function(req, res) {
   res.render('artworks', artwork)
 
 })
+
+server.get('/', function (req, res, next) {
+  res.render('home', {layout: false});
+});
