@@ -6,6 +6,7 @@ module.exports = server
 
 const art = require('./art.json')
 
+
 // Middleware
 server.engine('hbs', hbs({
   extname: 'hbs'
@@ -23,4 +24,12 @@ const viewData = {
 
 server.get('/', function(req, res) {
   res.render('home', viewData)
+})
+
+server.get('/artworks/:id', function(req, res) {
+  
+  const id = req.params.id
+  const artwork = art.find(art => art.id == id)
+  res.render('artworks', artwork)
+
 })
