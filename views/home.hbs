@@ -7,5 +7,13 @@ Hello, templates!
     <body>
       <h1>{{title}}</h1>
     </body>
-    <p>{{Art}}</p>
+    {{#each art }} 
+      <li>{{title}} </li>
+         <li>{{comments}} </li>
+            <li>{{artwork}} </li>
+               <li>{{artist}} </li>
+                  <li>{{license}} </li>
+
+      {{/each}}
+   
 </html>

@@ -14,27 +14,21 @@ server.use(express.static('public'))
 
 // Routes
 server.get ('/', (req, res) => {
-
-  const viewData = {
+  const viewData = { 
     title: 'Gallery',
-    art: 'kea', 
-      "id": 1,
-    "title": "Kea in Flight",
-    "comments": [
-      "Very arty."
-    ],
-    "artwork": "images/kea.jpg",
-    "artist": {
-      "name": "Ben",
-      "url": "https://www.flickr.com/photos/seabirdnz/"
-    },
-    "license": {
-      "name": "CC BY-ND 2.0",
-      "url": "https://creativecommons.org/licenses/by-nd/2.0/"
-    }
+    art: art
   }
+  console.log(viewData)
+
   const template = 'home'
   res.render('home', viewData) 
 })
   
-  
+
+
+
+server.get ('/', (req, res) => {
+  art.find()
+
+  res.render('artworks', viewData) 
+})
