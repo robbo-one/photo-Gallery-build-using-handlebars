@@ -40,12 +40,12 @@ server.get ('/:id?', (req, res) => {
     image4: "Harakeke Flowers"
   }
 
-  for 
-  (let i = 0; i < params.length; i++) {
-  if req.params.id = art.find('id')) {
-      res.render('artworks', params)
-  }
-})
+//   for 
+//   (let i = 0; i < params.length; i++) {
+//   if req.params.id = art.find('id')) {
+//       res.render('artworks', params)
+//   }
+// })
 }
 
 
