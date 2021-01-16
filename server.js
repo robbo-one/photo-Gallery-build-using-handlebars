@@ -14,12 +14,13 @@ server.use(express.static('public'))
 
 
 // Routes
+//Home route
 server.get ('/', (req, res) => {
   const viewData = { 
     title: 'Gallery',
     art: art
   }
-  console.log(viewData)
+  console.log("viewData")
 
   const template = 'home'
   res.render('home', viewData) 
@@ -31,25 +32,13 @@ server.get ('/', (req, res) => {
 //3. hbs template modified to use image
 //IN PROGRESS
 
-server.get ('/:id?', (req, res) => {
+server.get ('/', (req, res) => {
+  art.find()
+
+  res.render('artworks', viewData) 
+})
+
   
-  const params = {
-    image1: "Kea in Flight",
-    image2: "Kowhai Flowers",
-    image3: "Kotare",
-    image4: "Harakeke Flowers"
-  }
-
-//   for 
-//   (let i = 0; i < params.length; i++) {
-//   if req.params.id = art.find('id')) {
-//       res.render('artworks', params)
-//   }
-// })
-}
-
-
-
 
 
  
