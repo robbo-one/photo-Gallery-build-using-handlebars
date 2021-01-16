@@ -14,7 +14,7 @@ server.use(express.static('public'))
 
 
 // Routes
-//Set Home route. Looks at home.hbs, sees {{title}}, gets title value from viewData object and renders on screen
+//Set Home route. Looks at home.hbs, sees {{title}}, gets title value from viewData object and renders on screen. json object is called 'art.
 server.get ('/', (req, res) => {
   const viewData = { 
     title: 'Gallery',
@@ -28,11 +28,12 @@ server.get ('/', (req, res) => {
 //See list of titles, artist, etc. Render goes to home. Home refers to >artwork summary partial which sees keys in art object and grabs their values (name, url, license etc) from viewData.art
 
 
-//Route that displays image when user goes to /artworks/:id (eg /artworks/1
-//Render goes to artworks template which has {{artwork}} and gets artwork data object defined in Line 3 of the function.
+//Route that displays image when user goes to /artworks/:id:
+//ID entered finds art.id image and saves it as 'artwork".
+//Render goes to artworks template which has {{artwork}} and renders it with 'artwork' object defined in previous line of function.
 server.get ('/artworks/:id', (req, res) => {
-  const id = req.params.id
-  const artwork = art.find(art => art.id == id)
+  const id = req.params.id 
+  const artwork = art.find(art => art.id == id) 
   res.render('artworks', artwork) 
 })
 
