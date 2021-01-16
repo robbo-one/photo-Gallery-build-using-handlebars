@@ -14,7 +14,7 @@ server.use(express.static('public'))
 
 
 // Routes
-//Home route
+//Home route. Looks at home.hbs, sees {{title}}, gets title value from viewData object and renders on screen
 server.get ('/', (req, res) => {
   const viewData = { 
     title: 'Gallery',
@@ -25,6 +25,10 @@ server.get ('/', (req, res) => {
   const template = 'home'
   res.render('home', viewData) 
 })
+//Render sees {{id, comment, etc}} keys in home.hbs and grabs their values from viewData
+
+
+
 
 //Create route that displays selected image when "/artworks///:id" is visited 
 //1. Data (images) defined in params object

@@ -9,12 +9,13 @@ Hello, templates!
     </body>
     {{#each art }} 
       <li>{{title}} </li>
-         <li>{{comments}} </li>
-            <li>{{artwork}} </li>
-               <li>{{artist}} </li>
-                  <li>{{license}} </li>
-
+        <li>{{artwork}} </li>
+          <li>{{artist}} </li>
+            <li>{{artist.name}} </li> 
+              <li>{{licence}}</li>
+                <li>{{license.url}} </li>
       {{/each}}
+
     <p>{{params}}</p>
    
 </html>
