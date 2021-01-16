@@ -37,7 +37,8 @@ server.get ('/artworks/:id', (req, res) => {
   res.render('artworks', artwork) 
 })
 
-  
+ //Link to home page from image view (partial). If user clicks on home link from image.
+
 
 
 
