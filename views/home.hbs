@@ -8,12 +8,7 @@ Hello, templates!
       <h1>{{title}}</h1>
     </body>
     {{#each art }} 
-      <li>{{title}} </li>
-        <li>{{artwork}} </li>
-          <li>{{artist}} </li>
-            <li>{{artist.name}} </li> 
-              <li>{{licence}}</li>
-                <li>{{license.url}} </li>
+    {{> artwork_summary}}
       {{/each}}
 
     <p>{{params}}</p>
